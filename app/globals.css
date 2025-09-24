@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Lexend";
+  src: url("/fonts/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f1f2f2;
+  --text-color: #0d0019;
+  --primary: #4f4395;
+  --secondary: #6857c9;
+  --tertiary: #9c53c7;
+  --border-color: #e6e7e8;
+  --font-lexend: "Lexend", Helvetica, sans-serif;
+  --font-space-grotesk: "SpaceGrotesk", Helvetica, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lexend", Helvetica, sans-serif;
+}
+
+.fade-overlay {
+  background:
+    linear-gradient(to right, var(--background) 0%, rgba(241, 242, 242, 0.8) 5%, rgba(241, 242, 242, 0.4) 15%, transparent 25%, transparent 75%, rgba(241, 242, 242, 0.4) 85%, rgba(241, 242, 242, 0.8) 95%, var(--background) 100%),
+    linear-gradient(to bottom, var(--background) 0%, rgba(241, 242, 242, 0.8) 10%, rgba(241, 242, 242, 0.4) 20%, transparent 30%, transparent 70%, rgba(241, 242, 242, 0.4) 80%, rgba(241, 242, 242, 0.8) 90%, var(--background) 100%);
+}
+
+.color-overlay {
+  background: radial-gradient(ellipse at center, #9c53c7 10%, #6857c9 100%);
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .bg-primary-75 {
+    background-color: var(--primary);
+    opacity: 0.75;
+  }
+  .border-color {
+    border-color: var(--border-color);
+  }
+  .text-default {
+    color: var(--text-color);
+  }
+  .text-default-50 {
+    color: var(--text-color);
+    opacity: 0.5;
+  }
+  .text-default-75 {
+    color: var(--text-color);
+    opacity: 0.75;
+  }
+  .btn-hover-gradient {
+    background: var(--primary);
+    background-image: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: background-size 0.3s ease;
+    box-shadow: 0 4px 12px rgba(79, 67, 149, 0.25);
+  }
+  .btn-hover-gradient:hover {
+    background-size: 100% 100%;
+  }
 }
