@@ -43,7 +43,6 @@ export default function ImageTrail({
   velocityFactor = 0.1
 }: ImageTrailProps) {
   const [imageIndex, setImageIndex] = useState(0);
-  const [idCounter, setIdCounter] = useState(0);
   const [distance, setDistance] = useState<number | undefined>(undefined);
   const [trailImages, setTrailImages] = useState<TrailImage[]>([]);
   const [velocity, setVelocity] = useState({ x: 0, y: 0 });
@@ -119,7 +118,7 @@ export default function ImageTrail({
   }, [distance, spawnDistance, spawnImage]);
 
   return (
-    <div className="fixed inset-0 overflow-hidden">
+    <div className="fixed inset-0 overflow-hidden z-1">
       <AnimatePresence>
         {trailImages.map((image) => (
           <motion.img
@@ -131,8 +130,7 @@ export default function ImageTrail({
               top: `${image.y}px`,
               willChange: 'opacity, transform',
               height: `${imageSize}px`,
-              filter: "saturate(0.01)",
-              opacity: 0.3
+              opacity: 0.5
             }}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{

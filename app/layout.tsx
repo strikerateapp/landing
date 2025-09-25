@@ -19,19 +19,9 @@ export default function RootLayout({
         className={`antialiased`}
         style={{ backgroundColor: '#f1f2f2' }}
       >
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
-          <div className="container mx-auto relative">
-          <div className="absolute inset-0 color-overlay"></div>
-            <img src="/assets/hand-of-god.jpg" className="w-full h-full object-contain" style={{
-              filter: "saturate(0.01)",
-              opacity: 0.8,
-            }} />
-            <div className="absolute inset-0 fade-overlay"></div>
-          </div>
-        </div>
         <Particles />
         <ImageTrail />
-        <div className="container mx-auto relative z-10">
+        <div className="container mx-auto relative">
           {children}
         </div>
       </body>
