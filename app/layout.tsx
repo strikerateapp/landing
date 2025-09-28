@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Particles from "./components/particles";
 import ImageTrail from "./components/image-trail";
 
 export const metadata: Metadata = {
@@ -19,11 +18,8 @@ export default function RootLayout({
         className={`antialiased`}
         style={{ backgroundColor: '#f1f2f2' }}
       >
-        <Particles />
+        {children}
         <ImageTrail />
-        <div className="container mx-auto relative">
-          {children}
-        </div>
       </body>
     </html>
   );

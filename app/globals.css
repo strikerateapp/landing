@@ -23,6 +23,8 @@
 
 body {
   font-family: "Lexend", Helvetica, sans-serif;
+  background-color: var(--background);
+  font-size: 15px;
 }
 
 .fade-overlay {
@@ -35,41 +37,42 @@ body {
   background: radial-gradient(ellipse at center, #9c53c7 10%, #6857c9 100%);
 }
 
-@layer utilities {
-  .text-primary {
-    color: var(--primary);
+  @layer utilities {
+    .btn-hover-gradient {
+      background: var(--primary);
+      background-image: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
+      background-size: 100% 0%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      transition: background-size 0.3s ease;
+      box-shadow: 0 4px 12px rgba(79, 67, 149, 0.25);
+    }
+    .btn-hover-gradient:hover {
+      background-size: 100% 100%;
+    }
+    .alt-btn-hover-gradient {
+      background: var(--background);
+      background-image: linear-gradient(to bottom, var(--background) 0%, var(--border-color) 100%);
+      background-size: 100% 0%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      transition: background-size 0.3s ease;
+      box-shadow: 0 4px 12px rgba(230, 231, 232, 0.25);
+    }
+    .alt-btn-hover-gradient:hover {
+      background-size: 100% 100%;
+    }
+    .shadow-primary {
+      box-shadow: 0 4px 12px rgba(79, 67, 149, 0.25);
+    }
+    .shadow-card {
+      box-shadow: 0 2px 8px rgba(104, 87, 201, 0.15), 0 1px 3px rgba(104, 87, 201, 0.1);
+    }
+    .shadow-card-hover {
+      box-shadow: 0 4px 16px rgba(104, 87, 201, 0.2), 0 2px 6px rgba(104, 87, 201, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .shadow-card-hover:hover {
+      box-shadow: 0 8px 24px rgba(104, 87, 201, 0.25), 0 4px 12px rgba(104, 87, 201, 0.2);
+    }
   }
-  .bg-primary {
-    background-color: var(--primary);
-  }
-  .bg-primary-75 {
-    background-color: var(--primary);
-    opacity: 0.75;
-  }
-  .border-color {
-    border-color: var(--border-color);
-  }
-  .text-default {
-    color: var(--text-color);
-  }
-  .text-default-50 {
-    color: var(--text-color);
-    opacity: 0.5;
-  }
-  .text-default-75 {
-    color: var(--text-color);
-    opacity: 0.75;
-  }
-  .btn-hover-gradient {
-    background: var(--primary);
-    background-image: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
-    background-size: 100% 0%;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    transition: background-size 0.3s ease;
-    box-shadow: 0 4px 12px rgba(79, 67, 149, 0.25);
-  }
-  .btn-hover-gradient:hover {
-    background-size: 100% 100%;
-  }
-}

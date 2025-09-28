@@ -38,8 +38,8 @@ export default function ImageTrail({
     "/assets/cursor-trail/ronaldo-nazario.jpg",
     "/assets/cursor-trail/steph-curry.jpg",
   ],
-  imageSize = 90,
-  spawnDistance = 42,
+  imageSize = 60,
+  spawnDistance = 24,
   velocityFactor = 0.1
 }: ImageTrailProps) {
   const [imageIndex, setImageIndex] = useState(0);
@@ -118,7 +118,7 @@ export default function ImageTrail({
   }, [distance, spawnDistance, spawnImage]);
 
   return (
-    <div className="fixed inset-0 overflow-hidden z-1">
+    <div className="fixed inset-0 overflow-hidden z-[0]">
       <AnimatePresence>
         {trailImages.map((image) => (
           <motion.img
