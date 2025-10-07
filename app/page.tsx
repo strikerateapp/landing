@@ -208,13 +208,13 @@ export default function Home() {
 
     switch (emailStatus) {
       case "valid":
-        return `${baseClasses} border-[var(--success)] hover:border-[var(--success)] bg-gradient-to-b from-[var(--background)] to-[var(--success)]/[0.02]`;
+        return `${baseClasses} border-[var(--success)] hover:border-[var(--success)] bg-gradient-to-b from-[var(--background)] to-[var(--success)]/5`;
       case "invalid":
-        return `${baseClasses} border-[var(--error)] hover:border-[var(--error)] bg-gradient-to-b from-[var(--background)] to-[var(--error)]/[0.02]`;
+        return `${baseClasses} border-[var(--error)] hover:border-[var(--error)] bg-gradient-to-b from-[var(--background)] to-[var(--error)]/5`;
       case "success":
         return `${baseClasses} border-[var(--success)]`;
       case "error":
-        return `${baseClasses} border-[var(--error)] bg-gradient-to-b from-[var(--background)] to-[var(--error)]/[0.02]`;
+        return `${baseClasses} border-[var(--error)] bg-gradient-to-b from-[var(--background)] to-[var(--error)]/5`;
       default:
         return `${baseClasses} border-[var(--border-color)] hover:border-[var(--primary)]`;
     }
@@ -240,7 +240,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative w-full h-[98dvh] max-h-[1080px] max-w-[1920px] mx-auto">
+      <div className="relative w-full lg:h-[98dvh] lg:max-h-[1080px] max-w-[1920px] mx-auto">
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[-1]">
           <img
             src="/assets/hand-of-god.png"
